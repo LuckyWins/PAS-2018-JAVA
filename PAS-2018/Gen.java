@@ -1,5 +1,5 @@
+import mylib.MyLib;
 public class Gen {
-	import mylib.MyLib;
 	public static int setone(int setonei) {
 		int setonea;
 		setonea = 1;

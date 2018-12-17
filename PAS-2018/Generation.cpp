@@ -25,17 +25,25 @@ string Tab()
 
 void Generation(LT::LexTable &Lextable, In::StToken *tokens)
 {
-	Head();
+	//Head();
 	
 	for (int i = 0; i < Lextable.size; i++)
 	{
 		switch (Lextable.table[i].lexema)
 		{
+		default:
+			if (Lextable.table[i].lexema == LEX_LIB)
+			{
+				Head();
+			}
+			break;
 		case LEX_LIB:
 		{
 			if (Lextable.table[i].sn != 0)
 				throw ERROR_THROW(606, Lextable.table[i].sn, -1);
-			fout << Tab() << "import mylib.MyLib";
+			fout << "import mylib.MyLib;\n";
+			Head();
+			i++;
 			break;
 		}
 		case LEX_START:
