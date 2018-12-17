@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Error.h"
 #include "Generation.h"
 
 ofstream fout("Gen.java");
@@ -30,6 +31,13 @@ void Generation(LT::LexTable &Lextable, In::StToken *tokens)
 	{
 		switch (Lextable.table[i].lexema)
 		{
+		case LEX_LIB:
+		{
+			if (Lextable.table[i].sn != 0)
+				throw ERROR_THROW(606, Lextable.table[i].sn, -1);
+			fout << Tab() << "import mylib.MyLib";
+			break;
+		}
 		case LEX_START:
 			fout << Tab() << "public static void main(String args[])";
 			//tab_count++;
@@ -142,11 +150,6 @@ void Generation(LT::LexTable &Lextable, In::StToken *tokens)
 		case LEX_RETURN:
 		{
 			fout << Tab() << "return ";
-			break;
-		}
-		case LEX_LIB:
-		{	
-			fout << "import mylib.MyLib";
 			break;
 		}
 		case LEX_SQRT:

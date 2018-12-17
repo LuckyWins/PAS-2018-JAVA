@@ -51,7 +51,7 @@ int _tmain(int argc, wchar_t *argv[])
 		}
 		if (Log::flaw == false)
 		{
-			Generation(tables.Lextable, in.tokens);// Generation a JS code file
+			Generation(tables.Lextable, in.tokens);// Generation a Java code file
 			PN polishNatation;
 			if (polishNatation.CreatePolishNotation(&tables))
 			{

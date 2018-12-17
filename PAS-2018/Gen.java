@@ -1,4 +1,5 @@
 public class Gen {
+	import mylib.MyLib;
 	public static int setone(int setonei) {
 		int setonea;
 		setonea = 1;
@@ -10,7 +11,6 @@ public class Gen {
 	}
 
 	public static void main(String args[]) {
-import mylib.MyLib;
 		String mz;
 		int mq;
 		int mqs;

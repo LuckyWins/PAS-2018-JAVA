@@ -1,3 +1,4 @@
+MathLib;
 integer function setone(integer i)
 {
 type integer a;
@@ -10,7 +11,6 @@ return "2";
 }
 main
 {
-MathLib;
 type word z;
 type integer q;
 type integer qs;

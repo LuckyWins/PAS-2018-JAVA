@@ -105,9 +105,9 @@ namespace Lexer
 						LT::Entry entrylt(graph[j].lexema, InStruct.tokens[i].line, IT::IsId(Tables.IDtable, InStruct.tokens[i].token)); // создание
 																																		 // элемента таблицы лексем
 						LT::Add(Tables.Lextable, entrylt); //занесение в таблицу лексем
-						Tables.IDtable.table[Tables.Lextable.table[i].idxTI].count_parm = 2;
+						Tables.IDtable.table[Tables.Lextable.table[i].idxTI].count_parm = 1;
 						Tables.IDtable.table[Tables.Lextable.table[i].idxTI].parms[0] = 'n';
-						Tables.IDtable.table[Tables.Lextable.table[i].idxTI].parms[1] = 'n';
+						//Tables.IDtable.table[Tables.Lextable.table[i].idxTI].parms[1] = 'n';
 						break;
 					}
 
